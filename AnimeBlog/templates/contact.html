@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .contact{
+        height: 76vh;
+        padding-top: 100px;
+    }
+    .contact h1 {
+        color: var(--brown);
+        font-size: 3rem;
+        text-align: center;
+    }
+    .contact   p {
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+        .contact-info {
+            background-color: #f9f9f9;
+            border: 1px solid var(--brown);
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 1.4rem;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        .contact-info ul{
+            list-style: none;
+
+        }
+        .contact-info ul li a{
+            color: var(--brown);
+        }
+</style>
+  <section class="contact">
+    <h1>Contact Us</h1><br>
+    <p>Thank you for your interest in AnimeBlog! If you have any questions, suggestions, or just want to talk about anime, feel free to get in touch with us using the following methods:</p>
+    
+    <div class="contact-info">
+        <p><strong>Email:</strong> contact@animeblog.com</p>
+        <p><strong>Social Media:</strong></p>
+        <ul>
+            <li><a href="https://twitter.com/AnimeBlog" target="_blank">Twitter</a></li>
+            <li><a href="https://www.facebook.com/AnimeBlog" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/animeblog" target="_blank">Instagram</a></li>
+        </ul>
+    </div>
+  </section>
+{% endblock content %}

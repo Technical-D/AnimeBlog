@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .posts{
+        font-size: 1.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 100px;
+    }
+    .posts h1{
+        font-size: 3rem;
+        color: var(--brown);
+        text-align: center;
+    }
+    .post{
+        padding: 2rem;
+        margin:2rem 18% ;
+        border: 1px solid var(--brown);
+    }
+    .posts .post .img-block{
+        text-align: center;
+    }
+    .posts .post .img-block img{
+        height: 360px;
+        width: 720px;
+        text-align: center;
+    }
+    .posts .post .name-block{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.3rem;
+    }
+    .posts .post .name-block i{
+        color: var(--brown);
+    }
+    .posts .post p{
+        white-space: pre-wrap;
+    }
+</style>
+
+<section class="posts">
+    <h1 >Blog Posts</h1>
+
+    {% for blog in blogs %}
+    <div class="post">
+        <div class="img-block">
+            <img src={{ blog.imageUrl }} alt="">
+        </div>
+        <br>
+        <div>
+            <h3>{{ blog.title }}</h3>
+            <br>
+            <p>{{ blog.content }}</p>
+        </div>
+        <br>
+        <div class="name-block">
+            <span class="nm">posted by <i>{{ blog.user.name}}</i></span>
+            <span class="d">{{ blog.date_posted }}</span>
+        </div>
+    </div>
+    {% endfor %}
+
+</section>
+{% endblock content %}

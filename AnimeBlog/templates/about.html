@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .about{
+        font-size: 1.6rem;
+        height: 54rem;
+        padding-top: 100px;
+    }
+    .about h1 {
+            color: var(--brown);
+            font-size: 3rem;
+            text-align: center;
+        }
+        .about h2{
+            color: var(--brown);
+        }
+        .about p {
+            margin-bottom: 15px;
+        }
+        .team-section {
+            margin-top: 20px;
+        }
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+</style>
+  <section class="about">
+    <h1>About Us</h1><br>
+    <p>Welcome to AnimeBlog, your ultimate destination for everything anime! Here at AnimeBlog, we are passionate about Japanese animation and the vibrant world of anime. Our mission is to provide a platform for anime enthusiasts to connect, explore, and share their love for anime.</p>
+
+    <p>Through our blog, we aim to deliver engaging and informative content related to all things anime. From anime reviews, character analysis, and top lists to behind-the-scenes insights and anime culture, we cover it all! Our goal is to create a welcoming and vibrant community where anime fans can come together to celebrate their favorite shows, characters, and moments.</p>
+
+    <div class="team-section">
+        <h2>Meet the Team</h2><br>
+        <div class="team-member">
+            <img src="https://placekitten.com/80/80" alt="Team Member 1">
+            <p><strong>John Doe</strong><br>Founder & Anime Enthusiast</p>
+        </div>
+        <div class="team-member">
+            <img src="https://placekitten.com/81/81" alt="Team Member 2">
+            <p><strong>Jane Smith</strong><br>Content Writer & Anime Lover</p>
+        </div>
+        <!-- Add more team members as needed -->
+    </div>
+  </section>
+{% endblock content %}

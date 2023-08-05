@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeBlog</title>
+    <link rel="icon" type="image/x-icon" href="{% static "images/icon.svg" %}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <script src="https://kit.fontawesome.com/f6f8f493f3.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- header section  -->
+<header>
+    <div class="header">
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a  class="logo"><i class="fa-brands fa-atlassian"></i>AnimeBlog</a>
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'post' %}">post</a>
+            <a href="{% url 'contact' %}">contact</a>
+            <a href="{% url 'about' %}">about</a>
+
+        </nav>
+        {% if user.is_authenticated %}
+        <div class="icons">
+            <a href='{% url 'logout' %}' class="fa-solid fa-right-from-bracket"></a>
+        </div>
+        {% else %}
+                <div>
+            <a href="{% url 'login' %}" class="btn">Login</a>
+        </div>
+        {% endif %}
+
+
+    </div>
+</header>
+    <!-- home  -->
+{% block content %}
+  
+{% endblock content %}
+
+<footer class="footer">
+    <h1 class="copyright">&#169;2023 <span>AnimeBlog</span> .inc | All right reserved!</h1>
+</footer>
+
+</body>
+<script>
+const menu = document.querySelector('#menu-bar');
+const navbar = document.querySelector('.navbar');
+const header = document.querySelector('.header-2');
+
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+
+</script>
+</html>

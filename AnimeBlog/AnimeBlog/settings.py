@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+env = environ.ENV()
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +27,7 @@ MEDIA_DIR = Path.joinpath(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rvhsp_x6zsvn@+!g!1sk!@f=9(%(=rueoiatyfoqotqp3f!05$'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'animedb',
         'USER': 'root',
-        'PASSWORD': 'dheeraj1902',
+        'PASSWORD': env('db_passwd'),
         'HOST':'localhost',
         'PORT':'3306',
     }
